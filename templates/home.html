@@ -1,0 +1,183 @@
+{% extends "base.html" %}
+{% block title %} Car Catalog - Serving the Car World {% endblock %}
+{% block content %}
+<style>
+    div.searchCars {
+        text-indent: 30px;
+    }
+    div.condition {
+        text-indent: 30px;
+    }
+    div.prices-scoller {
+        text-indent: 30px;
+    }
+    div.fuel {
+        text-indent: 30px;
+    }
+    div.title-status {
+        text-indent: 30px;
+    }
+    div.trans {
+        text-indent: 30px;
+    }
+    div.size {
+        text-indent: 30px;
+    } 
+    div.drives {
+        text-indent: 30px;
+    } 
+    div.trans {
+        text-indent: 30px;
+    } 
+    div.trans {
+        text-indent: 30px;
+    }         
+    
+</style>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body style="background-color: silver;">
+    <div class="searchCars">
+    <br>
+    <p><h2> Search Cars</h2></p>
+</div>
+<div class="condition">
+    <h3>Condition</h3>
+    <div class="cond-dropdown">
+        <form action="#" method="POST">
+            <select name="cond-dropdown">
+                <option value="new">New</option>
+                <option value="like-new">Like New</option>
+                <option value="excellent">Excellent</option>
+                <option value="good">Good</option>
+                <option value="fair">Fair</option>
+                <option value="salvage">Salvage</option>
+            </select>
+            <p><input type="submit" value="submit"></p>
+        </form>
+      </div>       
+</div>
+<br>
+<div class="prices-scroller">
+    <div data-role="page">
+        <div data-role="header">
+        </div>
+        <div data-role="main" class="ui-content">
+            <form action="#" method="POST">
+            <div data-role="rangeslider">
+                <label for="price-min">Price:</label>
+                <input type="range" name="price-min" id="price-min" value="0" min="0" max="1000000">
+                <label for="price-max">Price:</label>
+                <input type="range" name="price-max" id="price-max" value="1000000" min="0" max="1000000">
+            </div>
+            </form>
+        </div>
+    </div> 
+</div>
+    <br><br>
+<div class="fuel">
+    <h3>Fuel Type</h3>
+    <div class="fuel-dropdown">
+        <form action="#" method="POST">
+            <select name="fuel-dropdown">
+                <option value="gas">Gas</option>
+                <option value="hybrid">Hybrid</option>
+                <option value="electric">Electric</option>
+                <option value="diesel">Diesel</option>
+                <option value="other">Other</option>
+            </select>
+        </form>
+    </div>       
+</div>
+    <br><br>
+<div class="title-status">
+    <h3>Title Status</h3>
+    <div class="title-dropdown">
+        <form action="#" method="POST">
+            <select name="title-dropdown">
+                <option value="clean" name="clean">Clean</option>
+                <option value="lien" name="lien">Lien</option>
+                <option value="salvage" name="salvage">Salvage</option>
+                <option value="rebuilt" name="rebuilt">Rebuilt</option>
+                <option value="parts" name="parts">Parts</option>
+                <option value="missing" name="missing">Missing</option>
+            </select>
+        </form>
+    </div>       
+</div>
+    <br><br>
+<div class="trans">
+    <h3>Transmission</h3>
+    <div class="trans-dropdown">
+        <form action="#" method="POST">
+            <select name="trans-dropdown">
+                <option value="stick">Manual</option>
+                <option value="auto">Automatic</option>
+            </select>
+        </form>
+    </div>       
+</div>
+<br><br>
+<div class="drives">
+    <h3>Drive Type</h3>
+    <div class="drives-checkbox">
+        <form action="#" method="POST">
+            <select name="drives-checkbox">
+                <input type="checkbox" name="drive" value="4wd">All Wheel Drive/4 Wheel Drive 
+                <input type="checkbox" name="drive" value="rwd">Rear Wheel Drive
+                <input type="checkbox" name="drive" value="fwd">Front Wheel Drive
+            </select>
+        </form>
+    </div>       
+</div>
+<br><br>
+<div class="size">
+    <h3>Size</h3>
+    <div class="sizes-checkbox">
+        <form action="#" method="POST">
+            <select name="sizes-dropdown">
+                <input type="checkbox" name="drive" value="full">Full Size 
+                <input type="checkbox" name="drive" value="mid">Mid-Size
+                <input type="checkbox" name="drive" value="compact">Compact
+                <input type="checkbox" name="drive" value="subComp">Sub-Compact
+            </select>
+        </form>
+    </div>       
+</div>
+<br><br>
+<div class="drives">
+    <h3>Drive Type</h3>
+    <div class="drives-dropdown">
+        <form action="#" method="POST">
+            <select name="trans-dropdown">
+                <input type="checkbox" name="drive" value="4wd">All Wheel Drive/4 Wheel Drive 
+                <input type="checkbox" name="drive" value="rwd">Rear Wheel Drive
+                <input type="checkbox" name="drive" value="fwd">Front Wheel Drive
+            </select>
+        </form>
+    </div>       
+</div>
+
+
+
+<br><br><br>
+<div class="entering">
+    <p><input type="submit" value="submit"></p>
+</div>
+
+</body>
+{% endblock %}
+
+
+<p>{{row[0]}} {{row[1]}} {{row[2]}}        ${{row[6]}}</p>
+<br>
+<div class="miles">
+    <p>{{row[7]}} Miles</p>
+</div>
+<a href="{{ row[-2][:-1] }}">Image Link</a>
+<br>
+--------------------------------------------------
